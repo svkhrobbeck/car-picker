@@ -40,6 +40,7 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun CarPicker() {
+	Image(painter = painterResource(id = R.drawable.space), contentDescription = "bg space", modifier = Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
 	CarImageAndButton(
 		Modifier
 			.fillMaxSize()
@@ -62,7 +63,9 @@ fun CarImageAndButton(modifier: Modifier = Modifier) {
 		else -> R.drawable.car_1
 	}
 	Column(horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier) {
-		Image(painter = painterResource(id = imageId), contentDescription = null, contentScale = ContentScale.Fit, modifier = Modifier.width(300.dp).height(300.dp))
+		Image(painter = painterResource(id = imageId), contentDescription = null, contentScale = ContentScale.Fit, modifier = Modifier
+			.width(300.dp)
+			.height(300.dp))
 		Button(onClick = {
 			if (result === 6) {
 				result = 1
